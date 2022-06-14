@@ -1,0 +1,17 @@
+infra:
+  db:
+    name: "microservice_user-auth.db-database"
+    access:
+      user: "microservice_user-auth.db-user"
+      secret: "yHbVHb85vXvR4eRiehk2nKfABuY3mD9z"
+    connection:
+      host: "127.0.0.1"
+      port: "18007"
+    population:
+      schema: "db/v1.0.0/schema.sql"
+      functions:
+        - "db/v1.0.0/procedures.sql"
+        - "db/v1.0.0/triggers.sql"
+      views: "db/v1.0.0/views.sql"
+      data: "db/v1.0.0/population-debug.sql"
+
