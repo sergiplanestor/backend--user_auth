@@ -1,20 +1,11 @@
-package com.splanes.commons.user_auth.infrastructure.mapper
+package com.splanes.commons.user_auth.infrastructure.mapper.user
 
 import com.splanes.commons.user_auth.domain.model.user.UserData
-import com.splanes.commons.user_auth.domain.model.user.simplify
 import com.splanes.commons.user_auth.infrastructure.entity.user.UserDataEntity
+import com.splanes.commons.user_auth.infrastructure.mapper.Mapper
 import java.sql.Date
 
 class UserMapper : Mapper<UserData, UserDataEntity> {
-
-    inline fun <reified D : UserData> userOf(entity: UserDataEntity): D =
-        with(domainOf(entity)) {
-            when (D::class) {
-                UserData.Simple::class -> simplify()
-                UserData.Detailed::class -> this
-                else -> error("User data type provided not supported.")
-            }
-        } as D
 
     override fun domainOf(entity: UserDataEntity): UserData.Detailed = with(entity) {
         UserData.Detailed(

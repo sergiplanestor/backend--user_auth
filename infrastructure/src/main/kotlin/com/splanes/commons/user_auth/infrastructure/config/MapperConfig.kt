@@ -1,6 +1,6 @@
 package com.splanes.commons.user_auth.infrastructure.config
 
-import com.splanes.commons.user_auth.infrastructure.mapper.UserMapper
+import com.splanes.commons.user_auth.infrastructure.mapper.user.UserMapper
 import org.springframework.beans.factory.config.BeanDefinition
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
